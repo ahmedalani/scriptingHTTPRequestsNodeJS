@@ -11,8 +11,9 @@ https.get(requestOptions, (response) => {
 
   response.setEncoding('utf8');
 
+  let fullData = '';
   response.on('data', function getAndPrintHTMLChunks (dataComing) {
-    console.log(dataComing + '\n');
+    fullData += dataComing;
 
   });
 
@@ -23,8 +24,8 @@ https.get(requestOptions, (response) => {
 //     console.log('Chunk Received. Length:', data.length);
 //   });
 
-//   response.on('end', () => {
-//     console.log('Response stream complete.');
-//   });
+  response.on('end', () => {
+    console.log(fullData);
+  });
 
 });
