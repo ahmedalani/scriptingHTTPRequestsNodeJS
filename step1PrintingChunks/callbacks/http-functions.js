@@ -12,8 +12,8 @@ const https = require('https');
 https.get(options, (response) => {
 
   response.setEncoding('utf8');
-  let fullData = '';
 
+  let fullData = '';
   response.on('data', function getAndPrintHTMLChunks (dataComing) {
     fullData += dataComing;
 
@@ -28,10 +28,10 @@ https.get(options, (response) => {
 
 
   // function printHTML (html) {
-      // console.log('html');
+      console.log('html');
   // }
 
 
-  // callback(fullData);
+  callback('my passed in data');
 
 };
